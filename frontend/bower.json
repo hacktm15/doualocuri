@@ -1,0 +1,21 @@
+{
+  "name": "frontend",
+  "homepage": "https://github.com/axnsan12/hacktm2015",
+  "description": "Frontend administration page for local pubs.",
+  "main": "",
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.7"
+  }
+}
