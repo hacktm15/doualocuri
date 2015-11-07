@@ -1,0 +1,5 @@
+truncate table pubs;
+INSERT INTO pubs VALUES (1, 'pub1', '',2,3,''); 
+INSERT INTO pubs VALUES (2, 'pub2', '',3,3,''); 
+INSERT INTO pubs VALUES (3, 'pub3', '',4,3,''); 
+INSERT INTO pubs VALUES (4, 'pub4', '',5,3,''); 
