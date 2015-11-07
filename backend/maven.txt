@@ -1,0 +1,6 @@
+ro.ligaac
+vijdeasdummy
+1.0
+jar
+HackTM2015Dummy
+acesta este dummy-ul pentru a testa conexiunea
