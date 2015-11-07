@@ -1,0 +1,4 @@
+truncate table mese;
+INSERT INTO mese(id_ul_local_al_mesei, pub_id, locuri, is_free, zona) VALUES (1,1,5,1,'zona1');
+INSERT INTO mese(id_ul_local_al_mesei, pub_id, locuri, is_free, zona) VALUES (2,1,5,0,'zona2');
+INSERT INTO mese(id_ul_local_al_mesei, pub_id, locuri, is_free, zona) VALUES (1,2,5,1,'zona3');
