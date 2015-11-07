@@ -6,4 +6,11 @@
   <packaging>war</packaging>
   <name>HackTM2015Dummy</name>
   <description>acesta este dummy-ul pentru a testa conexiunea</description>
+  <dependencies>
+    <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>4.2.2.RELEASE</version>
+    </dependency>
+</dependencies>
 </project>

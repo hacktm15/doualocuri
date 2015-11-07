@@ -89,5 +89,4 @@ public class ApiUserController {
 	 * @RequestMapping(value="id", method=RequestMethod.GET)
 	 * @ResponseStatus(value=HTTPStatus.CREATED)
 	 */
-	 */
 }
