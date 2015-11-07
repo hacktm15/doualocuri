@@ -19,7 +19,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.util.UriTemplate;
 
-import entities.Pub;
+import entities.*;
+
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 
 @Controller
 @RequestMapping("/pubs")
@@ -31,6 +36,8 @@ public class ApiPubController {
 		pubs.put(1, new Pub(45.748554, "nume", "despre", 21.222149, 1, "strada", true));
 		pubs.put(2, new Pub(45.748554, "nume", "despre", 21.222149, 2, "strada", true));
 	}
+	
+	
 	@RequestMapping(value = "",method=RequestMethod.GET, produces=MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(value = HttpStatus.OK)
 	public @ResponseBody List<Pub> getPubs() {
