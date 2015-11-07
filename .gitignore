@@ -114,3 +114,7 @@ local.properties
 
 # STS (Spring Tool Suite)
 .springBeans
+
+# bower
+
+/frontend/bower_components
