@@ -7,8 +7,8 @@ drop table reservation;
 
 CREATE TABLE PUBS(
 
-id int(10) PRIMARY KEY,
-name character(30) not null,
+id int(10) PRIMARY KEY AUTO_INCREMENT,
+name character(30) not null ,
 descriere blob,
 lat float not null,
 lng float not null,
@@ -16,14 +16,20 @@ adresa character(100));
 
 create table mese(
 
-id int(10) primary key,
+id int(10) primary key AUTO_INCREMENT,
 id_ul_local_al_mesei int(10),
 pub_id int(10) references pubs(id),
 locuri int(10),
-is_free boolean);
+is_free boolean,
+zona character(10));
 
 create table reservation(
-id int(10) primary key,
+id int(10) primary key AUTO_INCREMENT,
 table_id int(10) references mese(id),
 moment timestamp
 );
+
+INSERT INTO pubs VALUES (1, 'pub1', '',2,3,''); 
+INSERT INTO pubs(name, descriere, lat, lng, adresa) VALUES ( 'pub2', '',3,3,''); 
+INSERT INTO pubs(name, descriere, lat, lng, adresa) VALUES ( 'pub3', '',4,3,''); 
+INSERT INTO pubs(name, descriere, lat, lng, adresa) VALUES ( 'pub4', '',5,3,''); 
