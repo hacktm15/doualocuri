@@ -1,4 +1,23 @@
-<resources>
-	<string name="app_name">Doua Locuri</string>
-	<string name="title_activity_map">Bar Map</string>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	<!-- The application name -->
+	<string name="app_name">Două Locuri</string>
+
+	<!-- Title for the main activity, shown in the launcher and on the action bar -->
+	<string name="title_activity_map">Harta localurilor</string>
+
+	<!-- Content description string for success status image -->
+	<string name="refresh_success">Actualizat cu succes</string>
+
+	<!-- Content description string for failure status image -->
+	<string name="refresh_fail">Actualizare eșuată</string>
+
+	<!-- Content description string for refresh button -->
+	<string name="action_refresh">Actualizează</string>
+
+	<!-- Shown at the bottom of the main activity, displays the time of the last successful refresh -->
+	<string name="last_refresh">Last refresh <xliff:g id="last_refresh_time" example="12:18:47">%1$tT</xliff:g></string>
+	<string name="content_description_pub_banner">Banner image</string>
+	<string name="make_reservation">Fă rezervare</string>
+	<string name="available_seats">locuri\nlibere</string>
+	<string name="time_table">D-J: %1$R - %2$R; V-S: %3$R - %4$R</string>
 </resources>

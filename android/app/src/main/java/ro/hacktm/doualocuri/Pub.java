@@ -3,18 +3,18 @@ package ro.hacktm.doualocuri;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.android.gms.maps.model.LatLng;
+
 public class Pub implements Parcelable {
 	private final int id;
 	private final String name, description;
-	private final double lat, lng;
-
+	private final LatLng latLng;
 
 	public Pub(int id, String name, String description, double lat, double lng) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
-		this.lat = lat;
-		this.lng = lng;
+		this.latLng = new LatLng(lat, lng);
 	}
 
 	public int getId() {
@@ -29,14 +29,30 @@ public class Pub implements Parcelable {
 		return description;
 	}
 
-	public double getLat() {
-		return lat;
+	@Override
+	public String toString() {
+		return name + "-" + id;
 	}
 
-	public double getLng() {
-		return lng;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof Pub)) return false;
+
+		Pub pub = (Pub) o;
+
+		return id == pub.id;
+
 	}
 
+	@Override
+	public int hashCode() {
+		return id;
+	}
+
+	public LatLng getLatLng() {
+		return latLng;
+	}
 
 	@Override
 	public int describeContents() {
@@ -48,16 +64,14 @@ public class Pub implements Parcelable {
 		dest.writeInt(this.id);
 		dest.writeString(this.name);
 		dest.writeString(this.description);
-		dest.writeDouble(this.lat);
-		dest.writeDouble(this.lng);
+		dest.writeParcelable(this.latLng, 0);
 	}
 
 	protected Pub(Parcel in) {
 		this.id = in.readInt();
 		this.name = in.readString();
 		this.description = in.readString();
-		this.lat = in.readDouble();
-		this.lng = in.readDouble();
+		this.latLng = in.readParcelable(LatLng.class.getClassLoader());
 	}
 
 	public static final Creator<Pub> CREATOR = new Creator<Pub>() {
