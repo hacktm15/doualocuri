@@ -118,3 +118,7 @@ local.properties
 # bower
 
 /frontend/bower_components
+
+# node
+
+/frontend/node_modules
