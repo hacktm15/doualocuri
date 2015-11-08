@@ -163,7 +163,6 @@ public class ReservationFragment extends Fragment {
 							@Override
 							public void onErrorResponse(VolleyError error) {
 								error.printStackTrace();
-								;
 							}
 						}
 				);
