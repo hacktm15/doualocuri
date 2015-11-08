@@ -1,4 +1,33 @@
-<resources>
-	<string name="app_name">Doua Locuri</string>
-	<string name="title_activity_map">Bar Map</string>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	<!-- The application name -->
+	<string name="app_name">Două Locuri</string>
+
+	<!-- Title for the main activity, shown in the launcher and on the action bar -->
+	<string name="title_activity_map">Harta localurilor</string>
+
+	<!-- Content description string for success status image -->
+	<string name="refresh_success">Actualizat cu succes</string>
+
+	<!-- Content description string for failure status image -->
+	<string name="refresh_fail">Actualizare eșuată</string>
+
+	<!-- Content description string for refresh button -->
+	<string name="action_refresh">Actualizează</string>
+
+	<!-- Shown at the bottom of the main activity, displays the time of the last successful refresh -->
+	<string name="last_refresh">Last refresh <xliff:g id="last_refresh_time" example="12:18:47">%1$tT</xliff:g></string>
+	<string name="content_description_pub_banner">Banner image</string>
+	<string name="make_reservation">Fă rezervare</string>
+	<string name="available_seats">locuri\nlibere</string>
+	<string name="time_table">L-V: %1$s - %2$s; S-D: %3$s - %4$s;</string>
+	<string name="title_activity_pub">Informații local</string>
+	<string name="book_for_half_hour">Rezerva pentru jumătate de oră</string>
+	<string name="reservation_count">Nr. persoane</string>
+	<string name="add_people">Adaugă persoană</string>
+	<string name="your_name">Nume</string>
+	<string name="reservation">Rezervare</string>
+	<string name="seats">locuri</string>
+	<string name="submit">Trimite</string>
+	<string name="error_loading_content">A apărut o eroare la încărcarea conținutului.\nVă rugăm încercați mai târziu.</string>
+	<string name="phone_label">Contact:</string>
 </resources>
