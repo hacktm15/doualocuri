@@ -1,9 +1,10 @@
 angular
 	.module('htmlapp')
-	.controller('AdministrareController', function (){
+	.controller('AdministrareController', function ($scope){
 		console.log('AdministrareController');
-	})
-	.module('witchMenu', []);
-    app.controller('switchMenu', ['$scope', function ($scope) {
-        $scope.tab = 'Mese';
-    }]);
+		$scope.tab = 'mese';
+		$scope.pubId = $rootScope.pubId;
+		$scope.changeLocation = function(loc){
+			$scope.tab = loc;
+		};		
+	});	

@@ -27,12 +27,12 @@ nav {
 	height:100%;
 	display:inline-block;
 }
-.nav_logo {
+/*.nav_logo {
 	width:200px;
 	height:100px;
 	background-color:#323232; 
 	margin:50px auto;
-}
+}*/
 nav ul {
 	list-style: none;
 	padding:30px 15px auto 15px;
@@ -45,4 +45,10 @@ nav hr {
 	margin-left:0;
 }
 
-
+.menu_item{
+	cursor: pointer;
+}
+.nav_logo img{
+	width:300px;
+	margin:50px auto;
+}

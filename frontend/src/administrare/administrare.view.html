@@ -1,21 +1,30 @@
 <nav>
-	<div class="nav_logo">
+	<div class="nav_logo col-xs-10 col-xs-offset-1">
+		<img src="img/logo_alb.png">
 	</div>
-		<ul>
-			<li class="menu_item" ng-class="{active: tab == 'Mese'}" ng-click="tab='Mese'">Mese</li>
-			<hr>
-			<li class="menu_item" ng-class="{active: tab == 'Rezervari'}" ng-click="tab='Rezervari'">Rezervări</li>
-			<hr>
-			<li class="menu_item" ng-class="{active: tab == 'Editeaza'}" ng-click="tab='Editeaza'">Editează profilul</li>
-			<hr>
-			<li class="menu_item" ng-class="{active: tab == 'Promotii'}" ng-click="tab='Promotii'">Promoții</li>
-			<hr>
-		</ul>
+	<ul>
+		<li class="menu_item" ng-class="{active: tab == 'mese'}" ng-click="changeLocation('mese')">
+			Mese
+		</li>
+		<hr>
+		<li class="menu_item" ng-class="{active: tab == 'rezervari'}" ng-click="changeLocation('rezervari')">
+			Rezervări
+		</li>
+		<hr>
+		<li class="menu_item" ng-class="{active: tab == 'edit'}" ng-click="changeLocation('edit')">
+			Editează profilul
+		</li>
+		<hr>
+		<li class="menu_item" ng-class="{active: tab == 'promo'}" ng-click="changeLocation('promo')">
+			Promoții
+		</li>
+		<hr>
+	</ul>
 </nav>
 
 <div class="content" ng-switch="tab">
-     <div class="content_mese" ng-switch-when="Mese"> </div>
-     <div class="content_rezervari" ng-switch-when="Rezervari"> </div>
-     <div class="content_editeaza" ng-switch-when="Editeaza"> </div>
+     <group-table-directive pub-id="vm.pub_id" ng-switch-when="mese"></group-table-directive>
+     <group-reservations-directive class="content_rezervari" ng-switch-when="rezervari"></group-reservations-directive>
+     <edit-profile-directive class="content_editeaza" ng-switch-when="edit"></edit-profile-directive>
      <div class="content_promotii" ng-switch-when="Promotii"> </div>
 </div>

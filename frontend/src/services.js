@@ -3,6 +3,12 @@ angular
 	.factory('registerService', function () {
 		console.log("RegisterService");
 	})
+    .service('tableService', function($http){
+        $http.get('192.168.10.230:8080/api/');
+    })
+    .service('notificationService', function($http){
+        console.log('notif service');
+    })
 	.service('loginService', function($http, $cookieStore, $rootScope, $timeout) {
 
         var service = {};
@@ -10,7 +16,7 @@ angular
         service.Login = Login;
         service.SetCredentials = SetCredentials;
         service.ClearCredentials = ClearCredentials;
- 
+        
  
         function Login(username, password, callback) {
  
@@ -18,7 +24,7 @@ angular
              ----------------------------------------------*/
 
             if(username === 'bar' && password !== null){
-                response = { success: true };
+                response = { success: true, pub_id: 1};
                 
             } else {
                 response = { success: false, message: 'Username or password is incorrect' };
