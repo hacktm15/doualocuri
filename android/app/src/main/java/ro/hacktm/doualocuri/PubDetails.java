@@ -10,8 +10,8 @@ import java.util.List;
 public class PubDetails extends Pub {
 	private final ArrayList<Zone> zones;
 
-	public PubDetails(int id, String name, String description, double lat, double lng, String bannerUrl, Collection<? extends Zone> zones) {
-		super(id, name, description, lat, lng, bannerUrl);
+	public PubDetails(int id, String name, String description, double lat, double lng, String bannerUrl, String phone, Collection<? extends Zone> zones) {
+		super(id, name, description, lat, lng, phone, bannerUrl);
 		this.zones = new ArrayList<>(zones);
 	}
 

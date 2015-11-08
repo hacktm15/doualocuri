@@ -36,7 +36,7 @@ public class PubFragment extends Fragment {
 	private PubDetails pub;
 	private int pubId;
 
-	private TextView pubName, pubDescription, freeCapacity;
+	private TextView pubName, pubDescription, freeCapacity, phoneNumber;
 	private ImageView pubBanner;
 	private ViewGroup buttonBar;
 	private ViewSwitcher viewSwitcher, loadingErrorViewSwitcher;
@@ -63,6 +63,7 @@ public class PubFragment extends Fragment {
 		buttonBar = (ViewGroup) view.findViewById(R.id.buttonBar);
 		viewSwitcher = (ViewSwitcher) view.findViewById(R.id.loadingPubViewSwitcher);
 		loadingErrorViewSwitcher = (ViewSwitcher) view.findViewById(R.id.loadingErrorViewSwitcher);
+		phoneNumber = (TextView) view.findViewById(R.id.phoneNumber);
 
 		viewSwitcher.post(new Runnable() {
 			@Override
@@ -149,6 +150,7 @@ public class PubFragment extends Fragment {
 			for (int i = 0; i < buttonBar.getChildCount(); ++i) {
 				buttonBar.getChildAt(i).setEnabled(true);
 			}
+			phoneNumber.setText(pub.getPhone());
 		}
 		this.pub = pub;
 	}

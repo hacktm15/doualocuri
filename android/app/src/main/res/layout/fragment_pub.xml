@@ -5,33 +5,35 @@
 	android:layout_height="match_parent"
 	android:orientation="vertical">
 
+
+	<ViewSwitcher
+		android:id="@+id/loadingErrorViewSwitcher"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:visibility="gone">
+
+		<ProgressBar
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:indeterminate="true"
+			android:layout_gravity="center"/>
+
+		<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="center"
+			android:gravity="center"
+			android:text="@string/error_loading_content"
+			android:textSize="24sp"
+			android:textStyle="bold"/>
+
+	</ViewSwitcher>
+
 	<ViewSwitcher
 		android:id="@+id/loadingPubViewSwitcher"
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
 		android:layout_weight="1">
-
-		<ViewSwitcher
-			android:id="@+id/loadingErrorViewSwitcher"
-			android:layout_width="match_parent"
-			android:layout_height="match_parent">
-
-			<ProgressBar
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:indeterminate="true"
-				android:layout_gravity="center"/>
-
-			<TextView
-				android:layout_width="wrap_content"
-				android:layout_height="wrap_content"
-				android:layout_gravity="center"
-				android:gravity="center"
-				android:text="@string/error_loading_content"
-				android:textSize="24sp"
-				android:textStyle="bold"/>
-
-		</ViewSwitcher>
 
 		<ScrollView
 			android:id="@+id/containerScrollView"
@@ -90,7 +92,7 @@
 						android:layout_width="wrap_content"
 						android:layout_height="wrap_content"
 						android:textSize="96sp"
-						android:text="69"
+						android:text="61"
 						android:textColor="@color/primary_dark"/>
 
 					<TextView
@@ -104,6 +106,35 @@
 						android:layout_marginLeft="10dp"
 						android:textColor="@color/primary"
 						android:gravity="center"/>
+
+					<TextView
+						android:id="@+id/phoneNumberLabel"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:autoLink="phone"
+						android:clickable="true"
+						android:linksClickable="true"
+						android:layout_below="@id/availableSeats"
+						android:text="@string/phone_label"
+						android:textSize="20sp"
+						android:layout_marginLeft="20dp"
+						android:textColor="@color/primary_dark"
+						android:layout_marginBottom="7dp"/>
+
+					<TextView
+						android:id="@+id/phoneNumber"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:autoLink="phone"
+						android:clickable="true"
+						android:linksClickable="true"
+						android:layout_below="@id/availableSeats"
+						android:layout_toRightOf="@id/phoneNumberLabel"
+						android:text="072656977"
+						android:textSize="20sp"
+						android:layout_marginLeft="5dp"
+						android:textColor="@color/primary_dark"
+						android:layout_marginBottom="7dp"/>
 
 				</RelativeLayout>
 
@@ -126,7 +157,8 @@
 					android:layout_below="@id/separator2"
 					android:layout_centerHorizontal="true"
 					android:layout_marginLeft="10dp"
-					android:textColor="@color/primary"/>
+					android:textColor="@color/primary"
+					android:visibility="gone"/>
 
 				<View
 					android:id="@+id/separator3"
@@ -136,7 +168,8 @@
 					android:layout_below="@id/timeTable"
 					android:layout_marginTop="5dp"
 					android:layout_marginLeft="@dimen/pub_page_horizontal_margin"
-					android:layout_marginRight="@dimen/pub_page_horizontal_margin"/>
+					android:layout_marginRight="@dimen/pub_page_horizontal_margin"
+					android:visibility="gone"/>
 
 				<TextView
 					android:id="@+id/pubDescription"

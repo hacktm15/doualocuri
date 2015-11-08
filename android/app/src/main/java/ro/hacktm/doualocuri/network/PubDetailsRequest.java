@@ -41,7 +41,7 @@ public class PubDetailsRequest extends RequestParams<PubDetails> {
 					zones.add(new Zone(id, name, freeChairs, totalChairs));
 				}
 
-				return new PubDetails(pub.getId(), pub.getName(), pub.getDescription(), pub.getLatLng().latitude, pub.getLatLng().longitude, pub.getBannerUrl(), zones);
+				return new PubDetails(pub.getId(), pub.getName(), pub.getDescription(), pub.getLatLng().latitude, pub.getLatLng().longitude, pub.getBannerUrl(), pub.getPhone(), zones);
 			}
 		};
 	}

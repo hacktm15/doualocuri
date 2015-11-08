@@ -29,7 +29,7 @@ public class MakeReservationRequest extends RequestParams<Integer> {
 	}
 
 	@SuppressLint("SimpleDateFormat")
-	private final DateFormat mysqlTimestampFormat = new SimpleDateFormat("YYYY-MM-DD HH:mm:ss");
+	private final DateFormat mysqlTimestampFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
 	@Override
 	public BaseRequest<Integer> buildRequest(String baseUrl, Response.Listener<Integer> responseListener, Response.ErrorListener errorListener) {

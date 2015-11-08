@@ -16,7 +16,7 @@
 	<color name="primary">@color/mint</color>
 	<color name="primary_light">@color/light_mint</color>
 	<color name="primary_dark">@color/dark_mint</color>
-	<color name="accent">#FFC107</color>
+	<color name="accent">#CCCCCC</color>
 	<color name="primary_text">#212121</color>
 	<color name="secondary_text">#727272</color>
 	<color name="icons">#FFFFFF</color>

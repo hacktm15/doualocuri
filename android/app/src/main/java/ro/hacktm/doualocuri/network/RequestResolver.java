@@ -24,7 +24,7 @@ public class RequestResolver {
 
 	public synchronized static RequestResolver getInstance(Context context) {
 		if (instance == null) {
-			instance = new RequestResolver(context, "http://192.168.0.102:8080/api");
+			instance = new RequestResolver(context, "http://192.168.10.230:8080/api");
 		}
 
 		return instance;

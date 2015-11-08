@@ -7,20 +7,25 @@ import com.google.android.gms.maps.model.LatLng;
 
 public class Pub implements Parcelable {
 	private final int id;
-	private final String name, description;
+	private final String name, description, phone;
 	private final LatLng latLng;
 	private final String bannerUrl;
 
-	public Pub(int id, String name, String description, double lat, double lng, String bannerUrl) {
+	public Pub(int id, String name, String description, double lat, double lng, String phone, String bannerUrl) {
 		this.id = id;
 		this.name = name;
 		this.description = description;
+		this.phone = phone;
 		this.bannerUrl = bannerUrl;
 		this.latLng = new LatLng(lat, lng);
 	}
 
 	public int getId() {
 		return id;
+	}
+
+	public String getPhone() {
+		return phone;
 	}
 
 	public String getName() {
@@ -70,6 +75,7 @@ public class Pub implements Parcelable {
 		dest.writeInt(this.id);
 		dest.writeString(this.name);
 		dest.writeString(this.description);
+		dest.writeString(this.phone);
 		dest.writeParcelable(this.latLng, 0);
 		dest.writeString(this.bannerUrl);
 	}
@@ -78,6 +84,7 @@ public class Pub implements Parcelable {
 		this.id = in.readInt();
 		this.name = in.readString();
 		this.description = in.readString();
+		this.phone = in.readString();
 		this.latLng = in.readParcelable(LatLng.class.getClassLoader());
 		this.bannerUrl = in.readString();
 	}

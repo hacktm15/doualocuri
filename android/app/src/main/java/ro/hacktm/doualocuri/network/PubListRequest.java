@@ -20,7 +20,8 @@ public class PubListRequest extends RequestParams<ArrayList<Pub>> {
 		double lat = pub.getDouble("latitute");
 		double lng = pub.getDouble("longitute");
 		String bannerUrl = pub.getString("banner_url");
-		return new Pub(id, name, description, lat, lng, bannerUrl);
+		String phone = pub.getString("phone");
+		return new Pub(id, name, description, lat, lng, phone, bannerUrl);
 	}
 
 	@Override

@@ -103,7 +103,7 @@ public class ReservationFragment extends Fragment {
 		}
 
 		reservationCount = (EditText) view.findViewById(R.id.reservationCount);
-		name = (EditText) view.findViewById(R.id.name);
+		name = (EditText) view.findViewById(R.id.nameEditText);
 		final int finalMaxPeople = maxPeople;
 		reservationCount.addTextChangedListener(new TextWatcher() {
 			private String previousContent = "1";
