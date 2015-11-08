@@ -1,0 +1,54 @@
+html {
+   	height: 100%;
+}
+.grad {
+	background: #72c6d6; /* Old browsers */
+	background: -moz-linear-gradient(135deg, #72c6d6 0%, #9fddae 58%, #b3e6cd 100%); /* FF3.6+ 
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#72c6d6), color-stop(58%,#9fddae), color-stop(100%,#b3e6cd)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(135deg, #72c6d6 0%,#9fddae 58%,#b3e6cd 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(135deg, #72c6d6 0%,#9fddae 58%,#b3e6cd 100%); /* Opera 11.10+ */	
+	background: -ms-linear-gradient(135deg, #72c6d6 0%,#9fddae 58%,#b3e6cd 100%); /* IE10+ */
+	background: linear-gradient(135deg, #72c6d6 0%,#9fddae 58%,#b3e6cd 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#72c6d6', endColorstr='#b3e6cd',GradientType=0 ); /* IE6-9*/
+}
+.content {
+	position:absolute;
+	float:right;
+	width:70%;
+	display:inline-block;
+	min-height:100%;
+
+	background-color:white; 
+
+
+}
+nav {
+	width:30%;
+	height:100%;
+	display:inline-block;
+}
+/*.nav_logo {
+	width:200px;
+	height:100px;
+	background-color:#323232; 
+	margin:50px auto;
+}*/
+nav ul {
+	list-style: none;
+	padding:30px 15px auto 15px;
+	font-size:18px;
+	color:white;
+}
+nav hr {
+	background-color:#B7B7B7;
+	width:300px;
+	margin-left:0;
+}
+
+.menu_item{
+	cursor: pointer;
+}
+.nav_logo img{
+	width:300px;
+	margin:50px auto;
+}

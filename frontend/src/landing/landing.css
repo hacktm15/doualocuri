@@ -1,0 +1,46 @@
+#lnd_continut{
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+#logo {
+	width:500px;
+	padding:30px;
+	margin:auto 0;
+}
+#lnd_continut form {
+	margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.form-control {
+	margin: auto 0;
+	width:350px;
+	height:40px;
+}
+.btn { 
+	background-color:#66CC99;
+	color:white;
+	padding-right:20px;
+	padding-left:20px;
+}
+.btn:hover { 
+	background-color:#339966;
+	color:white;
+
+}
+
+.lnd_logo img{
+	width:360px;
+	margin:0 auto;
+	padding:30px auto auto 20px;
+
+}
+
