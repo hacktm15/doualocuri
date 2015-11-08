@@ -20,6 +20,7 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.LatLngBounds;
@@ -36,7 +37,7 @@ import java.util.Map;
 import ro.hacktm.doualocuri.network.PubListRequest;
 import ro.hacktm.doualocuri.network.RequestResolver;
 
-public class MapActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MapActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnCameraChangeListener {
 	public static final String KEY_PUBS = "pubs";
 	public static final String KEY_SELECTED_PUB = "selectedPub";
 	public static final String KEY_CAMERA_POSITION = "cameraPosition";
@@ -136,6 +137,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 			map.setMyLocationEnabled(true);
 			map.setBuildingsEnabled(false);
 			map.setIndoorEnabled(false);
+			map.setOnCameraChangeListener(this);
 			UiSettings mapUi = map.getUiSettings();
 			mapUi.setRotateGesturesEnabled(false);
 			mapUi.setMapToolbarEnabled(true);
@@ -153,7 +155,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 			map.setOnMarkerClickListener(new GoogleMap.OnMarkerClickListener() {
 				@Override
 				public boolean onMarkerClick(Marker marker) {
-					mSelectedPub = mMarkers.get(marker);
+					marker.showInfoWindow();
 					return false;
 				}
 			});
@@ -163,10 +165,23 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 					mSelectedPub = null;
 				}
 			});
+			map.setOnInfoWindowClickListener(new GoogleMap.OnInfoWindowClickListener() {
+				@Override
+				public void onInfoWindowClick(Marker marker) {
+					PubActivity.start(MapActivity.this, mMarkers.get(marker).getId());
+				}
+			});
 			mMap = map;
 		}
 	}
 
+	@Override
+	public void onCameraChange(CameraPosition position) {
+		float maxZoom = 17.0f;
+		if (mMap != null && position.zoom > maxZoom) {
+			mMap.animateCamera(CameraUpdateFactory.zoomTo(maxZoom));
+		}
+	}
 
 	public void onPubsLoaded(@NonNull ArrayList<Pub> pubs) {
 		lastSuccessfulRefresh = Calendar.getInstance(Locale.getDefault());
@@ -187,13 +202,11 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
 			Marker marker = map.addMarker(new MarkerOptions()
 					.title(pub.getName())
 					.snippet(pub.getDescription())
+					.icon(BitmapDescriptorFactory.fromResource(R.drawable.pin))
 					.position(pub.getLatLng()));
 
 			pubBounds.include(pub.getLatLng());
 			mMarkers.put(marker, pub);
-			if (mSelectedPub != null && pub.equals(mSelectedPub)) {
-				marker.showInfoWindow();
-			}
 		}
 
 		if (zoomToFit) {

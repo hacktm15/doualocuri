@@ -13,17 +13,18 @@ import java.util.Map;
 public class RequestResolver {
 	private final Map<String, RunningRequest> runningRequests = new HashMap<>();
 	private final Context context;
+	private final String baseUrl;
 
-	public RequestResolver(Context context) {
+	public RequestResolver(Context context, String baseUrl) {
 		this.context = context;
+		this.baseUrl = baseUrl;
 	}
-
 
 	private static RequestResolver instance = null;
 
 	public synchronized static RequestResolver getInstance(Context context) {
 		if (instance == null) {
-			instance = new RequestResolver(context);
+			instance = new RequestResolver(context, "http://192.168.0.102:8080/api");
 		}
 
 		return instance;
@@ -35,7 +36,7 @@ public class RequestResolver {
 			RunningRequest<T> request = runningRequests.get(params.getKey());
 			if (request == null) {
 				ProxyListener<T> listener = new ProxyListener<>(params.getKey());
-				request = new RunningRequest<>(params.buildRequest(listener, listener));
+				request = new RunningRequest<>(params.buildRequest(baseUrl, listener, listener));
 				runningRequests.put(params.getKey(), request);
 				Network.getInstance(context).addToQueue(request.request);
 			}
